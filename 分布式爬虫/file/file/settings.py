@@ -33,25 +33,25 @@ DEFAULT_REQUEST_HEADERS = {
 
 
 # # 使用 scrapy-redis 调度器
-# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 #
 # # 使用 scrapy-redis 去重
-# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 #
 # # 允许暂停和恢复
-# SCHEDULER_PERSIST = True
+SCHEDULER_PERSIST = True
 #
 # # 使用队列调度请求
-# SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
+SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
 #
 # # Redis连接配置
-# REDIS_HOST = '127.0.0.1'
-# REDIS_PORT = 6379
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
 
 
 ITEM_PIPELINES = {
     'file.pipelines.MongoPipeline': 300,
-    # 'scrapy_redis.pipelines.RedisPipeline': 400
+    'scrapy_redis.pipelines.RedisPipeline': 400
 }
 
 # Set settings whose default value is deprecated to a future-proof value
